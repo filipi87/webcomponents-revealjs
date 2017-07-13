@@ -181,6 +181,89 @@
 					<h2>Do we need Polymer?</h2>
 					<p></p>
 				</section>
+				<section>
+					<h2>DGT Web Components</h2>
+					<p>Web components Library built by Digitro Tecnologia</p>
+					<a href="http://webcomponents.digitro.com.br" target="_blank">http://webcomponents.digitro.com.br</a>.
+					<p>
+						<small>Available only at Dígitro's intranet.</small>
+						<small style="color:red">For while!</small>
+					</p>
+				</section>
+				<section>
+					<h2>DGT Web Components</h2>
+					<p>Showcase project</p>
+					<p>Web components project</p>
+					<img data-src="img/wc-project.png">
+				</section>
+				<section>
+					<h2>Automated testing</h2>
+					<p>Web Component Tester</p>
+					<div class="content">
+						<blockquote style="font-size: 2rem;">
+							<p>./node_modules/web-component-tester/bin/wct</p>
+						</blockquote>
+					</div>
+				</section>
+				<section>
+					<h2>Automated testing</h2>
+					<p>XVFB</p>
+					<div class="content">
+						<blockquote style="font-size: 2rem;">
+							<p>xvfb-run ./node_modules/web-component-tester/bin/wct</p>
+						</blockquote>
+					</div>
+				</section>
+				<section>
+					<h2>Automated testing</h2>
+					<pre>
+						<code class="hljs" data-trim contenteditable>
+							module.exports = {
+								suites: ["test/index.html"],
+								plugins: {
+									local: {
+										browsers: ["chrome","firefox"]
+									},
+									"test-reporter": {
+										reporter: "json",
+										output: "test_result.json"
+									}
+								},
+								//Executar remotamente
+								/*webserver: {
+								  port: 2000,
+								  hostname: '192.168.170.104',
+								},
+								activeBrowsers: [
+									{
+									  url: "http://192.168.172.214:4444/wd/hub", // Whatever hub you spun up in step 3.5.
+									  browserName: "internet explorer",
+									  platform: "windows",
+									  takesScreenshot: true,
+									  cssSelectorsEnabled: true,
+									  javascriptEnabled: true,
+									}
+									,{
+									  url: "http://192.168.172.214:4444/wd/hub", // Whatever hub you spun up in step 3.5.
+									  browserName: "chrome",
+									  platform: "windows",
+									  takesScreenshot: true,
+									  cssSelectorsEnabled: true,
+									  javascriptEnabled: true,
+									}
+									,{
+									  url: "http://192.168.172.214:4444/wd/hub", // Whatever hub you spun up in step 3.5.
+									  browserName: "firefox",
+									  platform: "windows",
+									  takesScreenshot: true,
+									  cssSelectorsEnabled: true,
+									  javascriptEnabled: true,
+									}
+								]*/
+							};
+						</code>
+					</pre>
+				</section>
 				<section data-background="#dddddd">
 					<h2>Architecture Overview</h2>
 					<img data-src="img/app-archtiecture.svg">
@@ -215,11 +298,6 @@
 							</dgt-module>
 						</code>
 					</pre>
-				</section>
-				<section data-background="#dddddd">
-					<h2>Automated testing</h2>
-					<p>Web Component Tester</p>
-					<p>XVFB</p>
 				</section>
 				<section data-background="#245628">
 					<h2>Benefits</h2>
