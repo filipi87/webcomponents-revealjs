@@ -182,6 +182,47 @@
 					<p></p>
 				</section>
 				<section>
+					<h2>Example with Polymer</h2>
+					<pre>
+						<code>
+							<link rel="import" href="../bower_components/polymer/polymer.html">
+							<dom-module id="hello-world-polymer">
+								<template>
+									<p>Hello <strong>{{name}}</strong></p>
+								</template>
+								<script>
+									Polymer({
+										is: 'hello-world-polymer',
+
+										properties: {
+											name: String
+										},
+
+										ready: function() {
+											console.log('ready');
+										},
+
+										attached: function() {
+											console.log('attached');
+										}
+									});
+								</script>
+							</dom-module>
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h2>Example with Polymer</h2>
+					<pre>
+						<code class="hljs" data-trim contenteditable>
+							<!-- Run it -->
+							<hello-world-polymer name="FloripaJS"></hello-world-polymer>
+							<hello-world-polymer></hello-world-polymer>
+						</code>
+					</pre>
+					<a href="examples/index-polymer.html" target="_blank">My first Polymer example!</a>.
+				</section>
+				<section>
 					<h2>Polymer 2.0</h2>
 					<p>Released 2017-05-15</p>
 					<p>Elements have been ported to Hybrid mode to be used in both 1.0- and 2.0-based applications.</p>
