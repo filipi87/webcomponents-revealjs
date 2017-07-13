@@ -81,6 +81,56 @@
 					<p>webcomponentsjs</p>
 					<a href="https://www.webcomponents.org/polyfills" target="_blank">https://www.webcomponents.org/polyfills</a>.
 				</section>
+				<section>
+					<h2>Example</h2>
+					<pre>
+						<code class="hljs" data-trim contenteditable>
+							<!-- Defines element markup -->
+							<template>
+								<p>Hello <strong></strong></p>
+							</template>
+							<script>
+								// Refers to the hello-world.html
+								var thisDoc =  (document._currentScript || document.currentScript).ownerDocument;
+								// Gets content from <template>
+								var template = thisDoc.querySelector('template').content;
+								// Creates an object based in the HTML Element prototype
+								var MyElementProto = Object.create(HTMLElement.prototype);
+								// Creates the "name" attribute and sets a default value
+								MyElementProto.name = 'World';
+								// Fires when an instance of the element is created
+								MyElementProto.createdCallback = function() {
+									// Creates the shadow root
+									var shadowRoot = this.createShadowRoot();
+									// Adds a template clone into shadow root
+									var clone = document.importNode(template, true);
+									shadowRoot.appendChild(clone);
+									// Caches <strong> DOM query
+									this.strong = shadowRoot.querySelector('strong');
+									// Checks if the "name" attribute has been overwritten
+									if (this.hasAttribute('name')) {
+										var name = this.getAttribute('name');
+										this.setname(name);
+									}
+									else {
+										this.setname(this.name);
+									}
+								};
+								// Sets new value to "name" attribute
+								MyElementProto.setname = function(val) {
+									this.name = val;
+									// Sets "name" value into <strong>
+									this.strong.textContent = this.name;
+								};
+								// Register in the main document
+								window.MyElement = document.registerElement('hello-world', {
+									prototype: MyElementProto
+								});
+							</script>
+						</code>
+					</pre>
+					<a href="examples/index.html" target="_blank">My first native example!</a>.
+				</section>
 			</div>
 		</div>
 
