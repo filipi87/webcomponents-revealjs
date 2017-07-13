@@ -171,8 +171,41 @@
 					<img data-src="img/app-archtiecture.svg">
 				</section>
 				<section data-background="#dddddd">
+					<h2>Module Sample</h2>
+					<img data-src="img/stt.png">
+				</section>
+				<section data-background="#dddddd">
+					<h2>Sample Code</h2>
+					<pre>
+						<code class="hljs" data-trim contenteditable>
+							<dgt-module label="{{localize('moduleTitle')}}" class="width-full height-full" header-class="hidden">
+								<dgt-modulecontent>
+									<dgt-portallayout class="width-full height-full">
+										<dgt-layoutcolumn width="50%">
+											<dgt-widget label="{{localize('submoduleGridTitle')}}" content-class="row mar-neg-sides">
+												<dgt-widgetcontent>
+													<stt-grid></stt-grid>
+												</dgt-widgetcontent>
+											</dgt-widget>
+										</dgt-layoutcolumn>
+										<dgt-layoutcolumn width="50%">
+											<dgt-widget label="{{localize('submoduleEditTitle')}}" content-class="row mar-neg-sides">
+												<dgt-widgetcontent>
+													<stt-form-new></stt-form-new>
+													<stt-form-edit></stt-form-edit>
+												</dgt-widgetcontent>
+											</dgt-widget>
+										</dgt-layoutcolumn>
+									</dgt-portallayout>
+								</dgt-modulecontent>
+							</dgt-module>
+						</code>
+					</pre>
+				</section>
+				<section data-background="#dddddd">
 					<h2>Automated testing</h2>
 					<p>Web Component Tester</p>
+					<p>XVFB</p>
 				</section>
 				<section data-background="#245628">
 					<h2>Benefits</h2>
