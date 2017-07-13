@@ -29,6 +29,9 @@
             this.setname(this.name);
         }
     };
+    MyElementProto.attachedCallback = function() {
+        console.log('Attached!');
+    };
     // Sets new value to "name" attribute
     MyElementProto.setname = function(val) {
         this.name = val;
