@@ -178,13 +178,10 @@
 					<p>Library for creating web components. It is designed to make it easier and faster to make custom HTML elements.</p>
 				</section>
 				<section>
-					<h2>Do we need Polymer?</h2>
-					<p></p>
-				</section>
-				<section>
 					<h2>Example with Polymer</h2>
 					<pre>
-						<code>
+						<code class="hljs" data-trim contenteditable>
+							<!--
 							<link rel="import" href="../bower_components/polymer/polymer.html">
 							<dom-module id="hello-world-polymer">
 								<template>
@@ -208,19 +205,120 @@
 									});
 								</script>
 							</dom-module>
+							-->
 						</code>
 					</pre>
 				</section>
 				<section>
 					<h2>Example with Polymer</h2>
 					<pre>
-						<code class="hljs" data-trim contenteditable>
-							<!-- Run it -->
+						<code data-trim contenteditable>
+							<!--
 							<hello-world-polymer name="FloripaJS"></hello-world-polymer>
-							<hello-world-polymer></hello-world-polymer>
+							<hello-world-polymer>aaa</hello-world-polymer>
+							-->
 						</code>
 					</pre>
 					<a href="examples/index-polymer.html" target="_blank">My first Polymer example!</a>.
+				</section>
+				<section>
+					<h2>Polymer main features</h2>
+					<p>Custom Constructor</p>
+					<pre>
+						<code class="hljs" data-trim contenteditable>
+							<!--
+							MyElement = Polymer({
+							  is: 'my-element',
+							  factoryImpl: function(foo, bar) {
+								this.foo = foo;
+								this.configureWithBar(bar);
+							  },
+							  configureWithBar: function(bar) {
+								//Do something
+							  }
+							});
+							var el = new MyElement(42, 'octopus');
+							-->
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h2>Polymer main features</h2>
+					<p>Event listener setup</p>
+					<pre>
+						<code class="hljs" data-trim>
+							<!--
+							<dom-module id="x-custom">
+							  <template>
+								<button on-tap="handleTap">Kick Me</button>
+							  </template>
+							  <script>
+								Polymer({
+								  is: 'x-custom',
+								  handleTap: function() {
+									alert('Ow!');
+								  }
+								});
+							  </script>
+							</dom-module>
+							-->
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h2>Polymer main features</h2>
+					<p>Data binding</p>
+					<pre>
+						<code class="hljs" data-trim contenteditable>
+							<!--
+							<dom-module id="user-view">
+							  <template>
+								<div>{{name}}</div>
+							  	<a href$="{{hostProperty}}"/>
+							  </template>
+							  <script>
+								Polymer({
+								  is: 'user-view',
+								  properties: {
+									name: String,
+									hostProperty: String
+								  }
+								});
+							  </script>
+							</dom-module>
+							-->
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h2>Polymer main features</h2>
+					<p>dom-repeat and dom-if</p>
+					<pre>
+						<code class="hljs" data-trim contenteditable>
+							<!--
+							<dom-module id="employee-list">
+							  <template>
+								<div> Employee list: </div>
+								<template is="dom-repeat" items="{{employees}}">
+									<div>First name: <span>{{item.first}}</span></div>
+									<div>Last name: <span>{{item.last}}</span></div>
+								</template>
+							  </template>
+							  <script>
+								Polymer({
+								  is: 'employee-list',
+								  ready: function() {
+									this.employees = [
+										{first: 'Bob', last: 'Smith'},
+										{first: 'Sally', last: 'Johnson'}
+									];
+								  }
+								});
+							  </script>
+							</dom-module>
+							-->
+						</code>
+					</pre>
 				</section>
 				<section>
 					<h2>Polymer 2.0</h2>
