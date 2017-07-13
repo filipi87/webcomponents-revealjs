@@ -20,6 +20,11 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
+		<style>
+			h1, h2 {
+				color: #B68585 !important;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="reveal">
@@ -32,9 +37,11 @@
 				</section>
 				<section>
 					<h2>Challenges to face</h2>
-					<p>Monolithic frontend</p>
-					<p>Low levels of productivity</p>
-					<p>Unable to release patches</p>
+					<div class="content">
+						<p>Monolithic frontend</p>
+						<p>Low levels of productivity</p>
+						<p>Unable to release patches</p>
+					</div>
 					<img height="200px" data-src="img/slow.png">
 				</section>
 				<section>
@@ -44,13 +51,17 @@
 				</section>
 				<section>
 					<h2>Overview</h2>
-					<p>04 W3C Standards</p>
-					<ul>
-						<li>HTML Templates</li>
-						<li>Shadow DOM</li>
-						<li>Custom Elements</li>
-						<li>HTML Imports</li>
-					</ul>
+					<p>W3C Standards</p>
+					<div class="content">
+						<blockquote style="font-size: 2rem;">
+							<ul>
+								<li>HTML Templates</li>
+								<li>Shadow DOM</li>
+								<li>Custom Elements</li>
+								<li>HTML Imports</li>
+							</ul>
+						</blockquote>
+					</div>
 				</section>
 				<section>
 					<h2>HTML Templates</h2>
