@@ -361,16 +361,53 @@
 					<img data-src="img/wc-project.png">
 				</section>
 				<section>
+					<h2>Web Component Tester</h2>
+					<p>Environment:</p>
+					<p>test-fixture can be used to reset DOM state between test runs.</p>
+					<p>Mocha's TDD (suite/test/etc) and BDD (describe/it/etc)</p>
+					<p>Chai's expect and assert interfaces are exposed</p>
+				</section>
+				<section>
+					<h2>Web Component Tester</h2>
+					<pre>
+						<code class="hljs" data-trim contenteditable>
+							<html>
+								<body>
+									<test-fixture id="dgt-autocomplete-fixture">
+										<template>
+											<dgt-autocomplete label="Países">
+												<option>Argentina</option>
+												<option>Brasil</option>
+												<option>Brunei</option>
+												<option>Itália</option>
+											</dgt-autocomplete>
+										</template>
+									</test-fixture>
+									<script>
+										suite('Attributes', function() {
+											var autoCompleteElement;
+											setup(function() {
+												autoCompleteElement = fixture('dgt-autocomplete-fixture');
+											});
+											test('value', function(done) {
+												autoCompleteElement.setAttribute('value', 'valor');
+												expect(autoCompleteElement.value).to.be.equal('valor');
+												done();
+											});
+										});
+									</script>
+								</body>
+							</html>
+						</code>
+					</pre>
+				</section>
+				<section>
 					<h2>Automated testing</h2>
-					<p>Web Component Tester</p>
 					<div class="content">
 						<blockquote style="font-size: 2rem;">
 							<p>./node_modules/web-component-tester/bin/wct</p>
 						</blockquote>
 					</div>
-				</section>
-				<section>
-					<h2>Automated testing</h2>
 					<p>XVFB</p>
 					<div class="content">
 						<blockquote style="font-size: 2rem;">
