@@ -424,43 +424,23 @@
 								plugins: {
 									local: {
 										browsers: ["chrome","firefox"]
-									},
-									"test-reporter": {
-										reporter: "json",
-										output: "test_result.json"
 									}
 								},
 								//Executar remotamente
-								/*webserver: {
+								webserver: {
 								  port: 2000,
 								  hostname: '192.168.170.104',
 								},
 								activeBrowsers: [
 									{
-									  url: "http://192.168.172.214:4444/wd/hub", // Whatever hub you spun up in step 3.5.
+									  url: "http://192.168.172.214:4444/wd/hub",
 									  browserName: "internet explorer",
 									  platform: "windows",
 									  takesScreenshot: true,
 									  cssSelectorsEnabled: true,
 									  javascriptEnabled: true,
 									}
-									,{
-									  url: "http://192.168.172.214:4444/wd/hub", // Whatever hub you spun up in step 3.5.
-									  browserName: "chrome",
-									  platform: "windows",
-									  takesScreenshot: true,
-									  cssSelectorsEnabled: true,
-									  javascriptEnabled: true,
-									}
-									,{
-									  url: "http://192.168.172.214:4444/wd/hub", // Whatever hub you spun up in step 3.5.
-									  browserName: "firefox",
-									  platform: "windows",
-									  takesScreenshot: true,
-									  cssSelectorsEnabled: true,
-									  javascriptEnabled: true,
-									}
-								]*/
+								]
 							};
 						</code>
 					</pre>
