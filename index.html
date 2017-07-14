@@ -402,21 +402,28 @@
 					</pre>
 				</section>
 				<section>
-					<h2>Automated testing</h2>
-					<div class="content">
-						<blockquote style="font-size: 2rem;">
-							<p>./node_modules/web-component-tester/bin/wct</p>
-						</blockquote>
-					</div>
-					<p>XVFB</p>
-					<div class="content">
-						<blockquote style="font-size: 2rem;">
-							<p>xvfb-run ./node_modules/web-component-tester/bin/wct</p>
-						</blockquote>
-					</div>
+					<h2>Web Component Tester</h2>
+					<pre>
+						<code class="hljs" data-trim contenteditable>
+							<html>
+								<head>
+									<meta charset="utf-8">
+									<script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+									<script src="../../web-component-tester/browser.js"></script>
+								</head>
+								<body>
+									<script>
+										WCT.loadSuites([
+											'auto-complete.html'
+										]);
+									</script>
+								</body>
+							</html>
+						</code>
+					</pre>
 				</section>
 				<section>
-					<h2>Automated testing</h2>
+					<h2>Web Component Tester</h2>
 					<pre>
 						<code class="hljs" data-trim contenteditable>
 							module.exports = {
@@ -444,6 +451,20 @@
 							};
 						</code>
 					</pre>
+				</section>
+				<section>
+					<h2>Web Component Tester</h2>
+					<div class="content">
+						<blockquote style="font-size: 2rem;">
+							<p>./node_modules/web-component-tester/bin/wct</p>
+						</blockquote>
+					</div>
+					<p>XVFB</p>
+					<div class="content">
+						<blockquote style="font-size: 2rem;">
+							<p>xvfb-run ./node_modules/web-component-tester/bin/wct</p>
+						</blockquote>
+					</div>
 				</section>
 				<section data-background="#dddddd">
 					<h2>Architecture Overview</h2>
